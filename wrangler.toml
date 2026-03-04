@@ -1,6 +1,2 @@
-[build]
-  command = "npm run build"
-  destination = "dist"
-
-[build.environment]
-  NODE_VERSION = "18"
+name = "bestiptvtuto"
+pages_build_output_dir = "dist"
