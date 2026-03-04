@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const featured = posts.slice(0, 3);
+const recent = posts.slice(3, 9);
+
+const devices = [
+  { name: 'Firestick', icon: '🔥', slug: 'firestick' },
+  { name: 'Samsung TV', icon: '📺', slug: 'samsung-tv' },
+  { name: 'LG Smart TV', icon: '📡', slug: 'lg-tv' },
+  { name: 'Apple TV', icon: '🍎', slug: 'apple-tv' },
+  { name: 'Android TV', icon: '🤖', slug: 'android-tv' },
+  { name: 'MAG Device', icon: '📦', slug: 'mag-device' },
+];
+---
+<Base title="Best IPTV Tutorials & Setup Guides">
+  <!-- Hero -->
+  <section class="text-center py-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      The Best IPTV Setup Guides
+    </h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-8">
+      Step-by-step tutorials for every device. Get your IPTV running in minutes.
+    </p>
+    <a href="/blog" class="inline-block bg-brand text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+      Browse All Tutorials →
+    </a>
+  </section>
+
+  <!-- Devices -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-bold mb-6">Browse by Device</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+      {devices.map(d => (
+        <a href={`/blog?device=${d.slug}`}
+           class="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-brand hover:shadow-md transition">
+          <div class="text-3xl mb-2">{d.icon}</div>
+          <div class="text-sm font-medium">{d.name}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured posts -->
+  {featured.length > 0 && (
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Featured Tutorials</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {featured.map(post => (
+          <a href={`/blog/${post.slug}`} class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition group">
+            {post.data.image && (
+              <img src={post.data.image} alt={post.data.title}
+                   class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+            )}
+            <div class="p-5">
+              <p class="text-xs text-gray-400 mb-2">{post.data.date}</p>
+              <h3 class="font-semibold text-gray-900 group-hover:text-brand transition leading-snug">{post.data.title}</h3>
+              <p class="text-sm text-gray-500 mt-2 line-clamp-2">{post.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Recent posts -->
+  {recent.length > 0 && (
+    <section>
+      <h2 class="text-2xl font-bold mb-6">Latest Tutorials</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {recent.map(post => (
+          <a href={`/blog/${post.slug}`} class="bg-white border border-gray-200 rounded-xl p-5 flex gap-4 hover:shadow-md transition group">
+            {post.data.image && (
+              <img src={post.data.image} alt={post.data.title}
+                   class="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+            )}
+            <div>
+              <p class="text-xs text-gray-400 mb-1">{post.data.date}</p>
+              <h3 class="font-semibold text-gray-900 group-hover:text-brand transition text-sm leading-snug">{post.data.title}</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">{post.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/blog" class="inline-block border border-brand text-brand px-6 py-2 rounded-lg hover:bg-brand hover:text-white transition font-medium">
+          View All Tutorials
+        </a>
+      </div>
+    </section>
+  )}
+</Base>
