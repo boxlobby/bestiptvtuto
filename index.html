@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BestIPTVTuto — Best IPTV Reviews, UK Plans &amp; Subscriptions Explained</title>
+<meta name="description" content="Honest IPTV reviews, UK IPTV subscription guides and best IPTV plan breakdowns. We test every service so you make the right choice."/>
+<meta name="keywords" content="iptv subscription, iptv uk, iptv plan, best iptv, iptv review"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#fff;--off:#f8f7f5;--light:#f1efe9;
+  --border:#e4e1d9;--soft:#edeae4;
+  --text:#181714;--muted:#6a6760;--faint:#aaa79f;
+  --blue-bg:#e7effc;--blue-fg:#1850b0;
+  --green-bg:#e5f3e8;--green-fg:#1a6330;
+  --amber-bg:#fdf2df;--amber-fg:#854e00;
+  --pink-bg:#fce7ef;--pink-fg:#8c1e4e;
+  --purple-bg:#f0eaff;--purple-fg:#5b2db0;
+  --f:'Poppins',system-ui,sans-serif;
+  --r:10px;--rl:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);color:var(--text);background:var(--white);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%;height:auto}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:300;height:60px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--soft)}
+.logo{font-size:16px;font-weight:700;letter-spacing:-.4px;white-space:nowrap}
+.logo span{font-weight:300;color:var(--muted)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;color:var(--muted);transition:color .15s;white-space:nowrap}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-search-btn{display:flex;align-items:center;gap:6px;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:0 10px;height:32px;cursor:pointer;font-size:12px;color:var(--muted);white-space:nowrap}
+.nav-search-btn svg{width:12px;height:12px;opacity:.5;flex-shrink:0}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px;margin-left:4px}
+.hamburger span{width:20px;height:1.5px;background:var(--text);border-radius:2px;display:block;transition:all .25s}
+
+/* ── SEARCH OVERLAY ── */
+.s-ov{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.5);display:none;align-items:flex-start;justify-content:center;padding:80px 1rem 0}
+.s-ov.open{display:flex}
+.s-box{width:100%;max-width:580px;background:var(--white);border-radius:var(--rl);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.18)}
+.s-row{display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid var(--soft)}
+.s-row svg{width:16px;height:16px;opacity:.35;flex-shrink:0}
+.s-row input{flex:1;height:52px;border:none;outline:none;font-family:var(--f);font-size:15px;color:var(--text);background:transparent}
+.s-esc{font-size:11px;color:var(--faint);border:1px solid var(--border);border-radius:5px;padding:3px 8px;cursor:pointer;white-space:nowrap}
+.s-list{max-height:360px;overflow-y:auto}
+.s-item{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--soft);cursor:pointer;transition:background .12s}
+.s-item:last-child{border-bottom:none}
+.s-item:hover{background:var(--off)}
+.s-item-img{width:44px;height:44px;border-radius:6px;object-fit:cover;flex-shrink:0;background:var(--light)}
+.s-item-info h4{font-size:13px;font-weight:500;margin-bottom:2px}
+.s-item-info p{font-size:11px;color:var(--faint)}
+.s-empty{padding:2rem;text-align:center;font-size:14px;color:var(--faint)}
+.s-foot{padding:9px 16px;font-size:11px;color:var(--faint);border-top:1px solid var(--soft)}
+
+/* ── MOBILE MENU ── */
+.mob-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;padding:1.5rem 1.5rem;border-top:1px solid var(--soft);overflow-y:auto}
+.mob-menu.open{display:flex}
+.mob-menu a{font-size:17px;font-weight:500;padding:.9rem 0;border-bottom:1px solid var(--soft);color:var(--text)}
+.mob-search{display:flex;align-items:center;gap:8px;background:var(--light);border:1px solid var(--border);border-radius:8px;padding:0 14px;height:42px;cursor:pointer;font-size:14px;color:var(--muted);margin-bottom:.5rem}
+.mob-search svg{width:14px;height:14px;opacity:.5}
+
+/* ── HERO ── */
+.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 1.25rem 4rem;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--soft) 1px,transparent 1px),linear-gradient(90deg,var(--soft) 1px,transparent 1px);background-size:50px 50px;opacity:.6}
+.hero-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 90% 80% at 50% 50%,transparent 20%,var(--white) 100%)}
+.hero-inner{position:relative;max-width:780px;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:100px;padding:5px 15px 5px 8px;font-size:12px;color:var(--muted);margin-bottom:1.75rem;animation:fu .5s ease both}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0}
+.hero h1{font-size:clamp(32px,6vw,64px);font-weight:700;line-height:1.06;letter-spacing:-2px;margin-bottom:1.1rem;animation:fu .5s .07s ease both}
+.hero h1 em{font-style:normal;font-weight:300;color:var(--muted)}
+.hero-sub{font-size:clamp(15px,2vw,17px);color:var(--muted);font-weight:300;line-height:1.7;max-width:500px;margin:0 auto 2.25rem;animation:fu .5s .14s ease both}
+.hero-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fu .5s .21s ease both}
+.btn{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 22px;border-radius:9px;font-family:var(--f);font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;transition:all .18s;white-space:nowrap}
+.btn-dark{background:var(--text);color:var(--white)}
+.btn-dark:hover{background:#2d2c28}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
+.btn-ghost:hover{background:var(--light)}
+.hero-stats{display:flex;margin-top:3rem;background:var(--border);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;animation:fu .5s .28s ease both;width:100%;max-width:600px;margin-left:auto;margin-right:auto}
+.h-stat{background:var(--white);padding:1rem 1.5rem;text-align:center;flex:1;min-width:0}
+.h-stat-n{font-size:clamp(20px,4vw,26px);font-weight:700;letter-spacing:-.5px}
+.h-stat-l{font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap}
+
+/* ── TRUST BAR ── */
+.trust{background:var(--off);border-top:1px solid var(--soft);border-bottom:1px solid var(--soft);padding:12px 1.5rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.t-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.t-item svg{width:13px;height:13px;opacity:.5;flex-shrink:0}
+
+/* ── SECTION SHELL ── */
+.sec{padding:4.5rem 1.25rem;max-width:1120px;margin:0 auto}
+.sec-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:.4rem}
+.sec-title{font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-.6px;line-height:1.15;margin-bottom:.35rem}
+.sec-title em{font-style:normal;font-weight:300;color:var(--muted)}
+.sec-sub{font-size:14px;color:var(--muted);font-weight:300;line-height:1.65}
+.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1.75rem;flex-wrap:wrap;gap:.75rem}
+.view-all{font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:7px 13px;transition:all .15s;white-space:nowrap}
+.view-all:hover{color:var(--text);background:var(--light)}
+
+/* ── TAGS ── */
+.tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:5px}
+.t-rv{background:var(--blue-bg);color:var(--blue-fg)}
+.t-gd{background:var(--green-bg);color:var(--green-fg)}
+.t-tp{background:var(--amber-bg);color:var(--amber-fg)}
+.t-nw{background:var(--pink-bg);color:var(--pink-fg)}
+.t-cm{background:var(--purple-bg);color:var(--purple-fg)}
+
+/* ── CAT FILTER TABS ── */
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.75rem}
+.ct{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--border);color:var(--muted);background:var(--white);transition:all .15s;white-space:nowrap}
+.ct svg{width:13px;height:13px;flex-shrink:0}
+.ct:hover{color:var(--text);border-color:var(--text);background:var(--off)}
+.ct.active{background:var(--text);color:var(--white);border-color:var(--text)}
+.ct .cc{font-size:11px;opacity:.6}
+
+/* ── FEATURED CARD ── */
+.feat-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:1.25rem;cursor:pointer;transition:box-shadow .2s}
+.feat-card:hover{box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.feat-img{position:relative;min-height:280px;overflow:hidden;background:var(--light)}
+.feat-img img{width:100%;height:100%;object-fit:cover;display:block}
+.feat-img-placeholder{width:100%;height:100%;min-height:280px;display:flex;align-items:center;justify-content:center;background:var(--light);position:relative}
+.feat-img-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:26px 26px}
+.feat-img-icon{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.feat-img-icon svg{width:28px;height:28px;opacity:.35}
+.feat-body{padding:2rem 2rem;display:flex;flex-direction:column;justify-content:center}
+.feat-body .tag{margin-bottom:1rem}
+.feat-body h2{font-size:clamp(17px,2.2vw,22px);font-weight:600;letter-spacing:-.25px;line-height:1.3;margin-bottom:.75rem}
+.feat-body p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.65;margin-bottom:1.25rem}
+.post-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--faint);flex-wrap:wrap}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--border);flex-shrink:0}
+.score{display:inline-flex;align-items:center;gap:3px;background:var(--amber-bg);color:var(--amber-fg);font-size:12px;font-weight:600;border-radius:5px;padding:2px 7px}
+.read-more{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:500;color:var(--text);margin-top:1rem;border-bottom:1px solid var(--border);padding-bottom:1px;transition:border-color .15s}
+.read-more:hover{border-color:var(--text)}
+
+/* ── ARTICLE GRID ── */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.art-card{background:var(--white);display:flex;flex-direction:column;cursor:pointer;transition:background .15s;text-decoration:none;color:inherit}
+.art-card:hover{background:var(--off)}
+.art-card-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--light);position:relative}
+.art-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.art-card:hover .art-card-img img{transform:scale(1.03)}
+.art-card-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light);position:relative}
+.art-card-img-ph .ph-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:20px 20px}
+.art-card-img-ph svg{position:relative;z-index:1;width:24px;height:24px;opacity:.3}
+.art-body{padding:1.25rem;display:flex;flex-direction:column;flex:1}
+.art-body .tag{margin-bottom:.65rem}
+.art-body h3{font-size:14px;font-weight:600;line-height:1.35;letter-spacing:-.1px;margin-bottom:.55rem;flex:1}
+.art-body p{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.55;margin-bottom:.9rem}
+.art-body .post-meta{margin-top:auto}
+.no-res{padding:2.5rem;text-align:center;color:var(--faint);font-size:14px;grid-column:span 3}
+
+/* ── HOW WE REVIEW ── */
+.how-wrap{background:var(--off);border-top:1px solid var(--soft);border-bottom:1px solid var(--soft);padding:4.5rem 1.25rem}
+.how-inner{max-width:1120px;margin:0 auto}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-top:2rem}
+.how-step{background:var(--off);padding:1.75rem}
+.step-n{font-size:32px;font-weight:700;color:var(--border);letter-spacing:-1px;margin-bottom:.9rem}
+.how-step h3{font-size:15px;font-weight:600;margin-bottom:.5rem}
+.how-step p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.65}
+
+/* ── CATEGORY SHOWCASE ── */
+.cats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.cat-card{border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1rem;cursor:pointer;transition:all .18s;display:flex;flex-direction:column;gap:.4rem}
+.cat-card:hover{border-color:var(--text);background:var(--off);transform:translateY(-2px)}
+.cat-icon{width:36px;height:36px;border-radius:8px;background:var(--light);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:.25rem;flex-shrink:0}
+.cat-icon svg{width:16px;height:16px;opacity:.55}
+.cat-card h3{font-size:13px;font-weight:600}
+.cat-card p{font-size:12px;color:var(--muted);font-weight:300;line-height:1.5}
+.cat-count{font-size:11px;color:var(--faint);margin-top:auto}
+
+/* ── NEWSLETTER ── */
+.nl-wrap{background:var(--text);color:var(--white);padding:4.5rem 1.25rem}
+.nl-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2.5rem;flex-wrap:wrap}
+.nl-left{max-width:460px}
+.nl-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.45;margin-bottom:.5rem}
+.nl-title{font-size:clamp(20px,3vw,32px);font-weight:700;letter-spacing:-.7px;line-height:1.15;margin-bottom:.6rem}
+.nl-title em{font-style:normal;font-weight:300;opacity:.55}
+.nl-sub{font-size:13px;opacity:.5;font-weight:300;line-height:1.65}
+.nl-form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-form input{flex:1;min-width:200px;height:42px;padding:0 14px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);border-radius:8px;font-family:var(--f);font-size:14px;color:var(--white);outline:none;transition:border-color .15s}
+.nl-form input::placeholder{opacity:.4}
+.nl-form input:focus{border-color:rgba(255,255,255,.5)}
+.nl-form button{height:42px;padding:0 20px;border-radius:8px;background:var(--white);color:var(--text);border:none;font-family:var(--f);font-size:14px;font-weight:600;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.nl-form button:hover{opacity:.88}
+.nl-note{font-size:11px;opacity:.3;margin-top:8px}
+
+/* ── FOOTER ── */
+footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25rem 1.75rem}
+.ft-inner{max-width:1120px;margin:0 auto}
+.ft-top{display:flex;gap:3rem;margin-bottom:2rem;flex-wrap:wrap}
+.ft-brand{max-width:220px}
+.ft-logo{font-size:15px;font-weight:700;margin-bottom:.6rem}
+.ft-logo span{font-weight:300;color:var(--muted)}
+.ft-brand p{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.65}
+.ft-cols{display:flex;gap:2.5rem;flex:1;flex-wrap:wrap}
+.ft-col h4{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:.8rem;font-weight:500}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.ft-col a{font-size:13px;color:var(--muted);transition:color .15s}
+.ft-col a:hover{color:var(--text)}
+.ft-bottom{border-top:1px solid var(--soft);padding-top:1.25rem;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.ft-bottom p{font-size:11px;color:var(--faint)}
+.ft-disc{font-size:11px;color:var(--faint);max-width:520px;line-height:1.55}
+
+/* ── ANIMATION ── */
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .cats-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  nav{padding:0 1rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-search-btn .ns-txt{display:none}
+  .feat-card{grid-template-columns:1fr}
+  .feat-img{min-height:200px}
+  .feat-img-placeholder{min-height:200px}
+  .art-grid{grid-template-columns:1fr 1fr}
+  .no-res{grid-column:span 2}
+  .how-steps{grid-template-columns:1fr}
+  .cats-grid{grid-template-columns:1fr 1fr}
+  .ft-top{flex-direction:column;gap:2rem}
+  .ft-brand{max-width:100%}
+  .trust{gap:1.25rem;padding:12px 1rem}
+  .t-item{font-size:11px}
+}
+@media(max-width:480px){
+  .hero{min-height:auto;padding:4rem 1rem 3rem}
+  .hero h1{letter-spacing:-1px}
+  .hero-stats{flex-wrap:wrap}
+  .h-stat{min-width:50%;border-bottom:1px solid var(--border)}
+  .h-stat:nth-child(3),.h-stat:nth-child(4){border-bottom:none}
+  .art-grid{grid-template-columns:1fr}
+  .no-res{grid-column:span 1}
+  .cats-grid{grid-template-columns:1fr 1fr}
+  .nl-inner{flex-direction:column}
+  .cat-tabs{gap:6px}
+  .ct{font-size:12px;padding:6px 11px}
+  .sec{padding:3rem 1rem}
+  .how-wrap{padding:3rem 1rem}
+  .nl-wrap{padding:3rem 1rem}
+  footer{padding:2.5rem 1rem 1.5rem}
+  .feat-body{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- SEARCH -->
+<div class="s-ov" id="sOv" onclick="sOvClose(event)">
+  <div class="s-box">
+    <div class="s-row">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
+      <input id="sIn" type="text" placeholder="Search IPTV reviews, plans, UK guides..." oninput="sRun(this.value)" autocomplete="off"/>
+      <span class="s-esc" onclick="sClose()">ESC</span>
+    </div>
+    <div class="s-list" id="sList"></div>
+    <div class="s-foot">Press ESC to close</div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-search" onclick="sOpen();closeMob()">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
+    Search articles...
+  </div>
+  <a href="#articles" onclick="closeMob()">IPTV Reviews</a>
+  <a href="#articles" onclick="closeMob()">Setup Guides</a>
+  <a href="#articles" onclick="closeMob()">Tips &amp; Tricks</a>
+  <a href="#categories" onclick="closeMob()">Categories</a>
+  <a href="#newsletter" onclick="closeMob()">Newsletter</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">Best<span>IPTV</span>Tuto</a>
+  <ul class="nav-links">
+    <li><a href="#articles">Reviews</a></li>
+    <li><a href="#articles">Guides</a></li>
+    <li><a href="#articles">Tips</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="article.html">Demo Article</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-search-btn" onclick="sOpen()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
+      <span class="ns-txt">Search...</span>
+    </div>
+    <div class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-vig"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-dot"></span>Updated weekly &middot; 100% independent</div>
+    <h1>The #1 blog for<br><em>honest IPTV reviews</em></h1>
+    <p class="hero-sub">Find the best IPTV subscription for your needs &mdash; from UK IPTV plans to global services. Real tests, honest scores, zero bias.</p>
+    <div class="hero-cta">
+      <a href="#articles" class="btn btn-dark">Browse all reviews</a>
+      <a href="#categories" class="btn btn-ghost">Explore categories &rarr;</a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="h-stat-n">24+</div><div class="h-stat-l">IPTV reviews</div></div>
+      <div class="h-stat"><div class="h-stat-n">50k</div><div class="h-stat-l">Monthly readers</div></div>
+      <div class="h-stat"><div class="h-stat-n">5</div><div class="h-stat-l">Categories</div></div>
+      <div class="h-stat"><div class="h-stat-n">100%</div><div class="h-stat-l">Independent</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="t-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1l1.5 3 3.5.5-2.5 2.5.6 3.5L7 9l-2.6 1.5.6-3.5L2.5 4.5 6 4z"/></svg>Independent IPTV reviews</div>
+  <div class="t-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/><path d="M7 3.5v3.5l2 2"/></svg>30-day real usage tests</div>
+  <div class="t-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg>Always clearly labelled</div>
+  <div class="t-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="12" height="10" rx="1.5"/><path d="M4 6h6M4 9h4"/></svg>Beginner-friendly guides</div>
+</div>
+
+<!-- ARTICLES -->
+<section class="sec" id="articles">
+  <div class="sec-hdr rv">
+    <div>
+      <div class="sec-lbl">The blog</div>
+      <div class="sec-title">Latest <em>articles</em></div>
+    </div>
+    <a href="#" class="view-all">View all &rarr;</a>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="cat-tabs rv" id="catTabs" style="transition-delay:.05s">
+    <div class="ct active" data-cat="all" onclick="fCat(this)">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="5" height="5" rx="1"/><rect x="8" y="1" width="5" height="5" rx="1"/><rect x="1" y="8" width="5" height="5" rx="1"/><rect x="8" y="8" width="5" height="5" rx="1"/></svg>
+      All <span class="cc">(25)</span>
+    </div>
+    <div class="ct" data-cat="reviews" onclick="fCat(this)">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1l1.5 3 3.5.5-2.5 2.5.6 3.5L7 9l-2.6 1.5.6-3.5L2.5 4.5 6 4z"/></svg>
+      Reviews <span class="cc">(11)</span>
+    </div>
+    <div class="ct" data-cat="guides" onclick="fCat(this)">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="10" height="10" rx="1.5"/><path d="M5 2v10M2 6h10"/></svg>
+      Setup Guides <span class="cc">(7)</span>
+    </div>
+    <div class="ct" data-cat="tips" onclick="fCat(this)">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="5" r="3"/><path d="M5 9h4l-.4 3h-3z"/></svg>
+      Tips &amp; Tricks <span class="cc">(4)</span>
+    </div>
+    <div class="ct" data-cat="compare" onclick="fCat(this)">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4M6 3L2 7l4 4"/></svg>
+      Comparisons <span class="cc">(2)</span>
+    </div>
+    <div class="ct" data-cat="news" onclick="fCat(this)">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h10M2 7h7M2 10h5"/></svg>
+      News <span class="cc">(1)</span>
+    </div>
+  </div>
+
+  <!-- Featured -->
+  <a href="article.html" class="feat-card rv" id="featCard" style="transition-delay:.08s">
+    <div class="feat-img">
+      <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80" alt="Best IPTV subscription review 2025" loading="lazy" onerror="this.parentNode.innerHTML=phHTML()"/>
+    </div>
+    <div class="feat-body">
+      <span class="tag t-rv">IPTV Review</span>
+      <h2>XtremeHD IPTV Review &mdash; Best IPTV Subscription in 2025?</h2>
+      <p>We tested XtremeHD for 30 days across four devices. Is this the best IPTV plan for UK users? Full breakdown of channels, stability, EPG quality and price.</p>
+      <div class="post-meta">
+        <span class="score">&#9733; 9.4 / 10</span>
+        <span class="dot"></span>
+        <span>Apr 10, 2025</span>
+        <span class="dot"></span>
+        <span>8 min read</span>
+      </div>
+      <span class="read-more">Read full review &rarr;</span>
+    </div>
+  </a>
+
+  <!-- Grid -->
+  <div class="art-grid rv" id="artGrid" style="transition-delay:.12s"></div>
+</section>
+
+<!-- HOW WE REVIEW -->
+<div class="how-wrap">
+  <div class="how-inner">
+    <div class="rv">
+      <div class="sec-lbl">Our process</div>
+      <div class="sec-title">How we <em>review</em></div>
+      <p class="sec-sub" style="margin-top:.35rem">Every IPTV subscription is tested the same rigorous way before we publish a single word.</p>
+    </div>
+    <div class="how-steps rv" style="transition-delay:.08s">
+      <div class="how-step">
+        <div class="step-n">01</div>
+        <h3>We buy &amp; subscribe</h3>
+        <p>We pay for every IPTV plan ourselves &mdash; no free access, no sponsored deals. You get our honest take on what a real subscriber experiences.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-n">02</div>
+        <h3>30-day test period</h3>
+        <p>We run each IPTV subscription across multiple devices and UK ISPs, tracking buffering, uptime, EPG accuracy and customer support quality.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-n">03</div>
+        <h3>Scored &amp; published</h3>
+        <p>Every IPTV review is scored across 8 fixed criteria. Scores update only when we retest. No pay-to-rank, no sponsored top spots.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="sec" id="categories">
+  <div class="sec-hdr rv">
+    <div>
+      <div class="sec-lbl">Browse by topic</div>
+      <div class="sec-title">Blog <em>categories</em></div>
+    </div>
+  </div>
+  <div class="cats-grid rv" style="transition-delay:.06s">
+    <div class="cat-card" onclick="fAndScroll('reviews')">
+      <div class="cat-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z"/></svg></div>
+      <h3>IPTV Reviews</h3>
+      <p>In-depth IPTV review for every major service &mdash; scored on 8 criteria.</p>
+      <span class="cat-count">11 articles</span>
+    </div>
+    <div class="cat-card" onclick="fAndScroll('guides')">
+      <div class="cat-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="14" height="12" rx="1.5"/><path d="M6 3v12M2 9h14"/></svg></div>
+      <h3>Setup Guides</h3>
+      <p>Step-by-step IPTV setup for Firestick, Smart TV, Android &amp; iOS.</p>
+      <span class="cat-count">7 articles</span>
+    </div>
+    <div class="cat-card" onclick="fAndScroll('tips')">
+      <div class="cat-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M7 12h4l-.5 4h-3z"/></svg></div>
+      <h3>Tips &amp; Tricks</h3>
+      <p>Fix IPTV buffering, choose the right IPTV plan, boost stream quality.</p>
+      <span class="cat-count">4 articles</span>
+    </div>
+    <div class="cat-card" onclick="fAndScroll('compare')">
+      <div class="cat-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9h12M10 4l5 5-5 5M8 4L3 9l5 5"/></svg></div>
+      <h3>Comparisons</h3>
+      <p>Best IPTV service head-to-head &mdash; which subscription wins?</p>
+      <span class="cat-count">2 articles</span>
+    </div>
+    <div class="cat-card" onclick="fAndScroll('news')">
+      <div class="cat-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h12M3 9h8M3 13h5"/></svg></div>
+      <h3>IPTV News</h3>
+      <p>UK IPTV regulations, market trends and service updates.</p>
+      <span class="cat-count">1 article</span>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nl-wrap" id="newsletter">
+  <div class="nl-inner">
+    <div class="nl-left">
+      <div class="nl-lbl">Stay in the loop</div>
+      <div class="nl-title">New IPTV reviews, <em>every week</em></div>
+      <p class="nl-sub" style="margin-top:.5rem">Get the latest IPTV subscription reviews and UK IPTV guides in your inbox. No spam, no affiliate hype.</p>
+    </div>
+    <div>
+      <div class="nl-form">
+        <input type="email" placeholder="your@email.com"/>
+        <button type="button">Subscribe &rarr;</button>
+      </div>
+      <p class="nl-note">Joined by 12,000+ readers. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="ft-logo">Best<span>IPTV</span>Tuto</div>
+        <p>Independent IPTV reviews, UK IPTV guides and subscription breakdowns. We test every service so you choose with confidence.</p>
+      </div>
+      <div class="ft-cols">
+        <div class="ft-col">
+          <h4>Top Reviews</h4>
+          <ul>
+            <li><a href="article.html">XtremeHD IPTV</a></li>
+            <li><a href="#">Apollo Group TV</a></li>
+            <li><a href="#">Falcon IPTV</a></li>
+            <li><a href="#">Best IPTV UK &rarr;</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="#">Firestick setup</a></li>
+            <li><a href="#">Smart TV IPTV</a></li>
+            <li><a href="#">Best IPTV plan guide</a></li>
+            <li><a href="#">Fix buffering</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">How we review</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="tos.html">Terms of Service</a></li>
+            <li><a href="dmca.html">DMCA</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>&copy; 2025 BestIPTVTuto. All rights reserved.</p>
+      <p class="ft-disc">Disclaimer: BestIPTVTuto is an independent IPTV review blog. We do not sell IPTV subscriptions. Some posts may contain sponsored content or affiliate links &mdash; these are always clearly disclosed. Our editorial opinions remain our own.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function phHTML(){return'<div class="feat-img-placeholder"><div class="feat-img-grid"></div><div class="feat-img-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="26" height="18" rx="2"/><path d="M12 5v18M3 16h26"/></svg></div></div>'}
+
+var ARTS=[
+  {id:'xhd',   cat:'reviews',  tag:'t-rv', lbl:'IPTV Review', title:'XtremeHD IPTV review: best IPTV subscription 2025?',       exc:'30 days of real testing. Is XtremeHD the best IPTV plan for UK users? Channels, stability, EPG &amp; price reviewed.',  date:'Apr 10, 2025', rd:'8 min', sc:'9.4', featured:true,  img:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=75'},
+  {id:'fstk',  cat:'guides',   tag:'t-gd', lbl:'Guide',        title:'How to set up IPTV on a Firestick — full UK guide',         exc:'Step-by-step IPTV setup for all Fire TV models. Best IPTV app recommendations included.',                                 date:'Apr 8, 2025',  rd:'6 min', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75'},
+  {id:'buf',   cat:'tips',     tag:'t-tp', lbl:'Tips',          title:'5 proven ways to fix IPTV buffering for good',              exc:'DNS tweaks, router QoS, and IPTV plan choices that actually eliminate buffering on any service.',                          date:'Apr 6, 2025',  rd:'4 min', img:'https://images.unsplash.com/photo-1527430253228-e93688616381?w=600&q=75'},
+  {id:'apo',   cat:'reviews',  tag:'t-rv', lbl:'IPTV Review',  title:'Apollo Group TV IPTV review: worth the subscription?',      exc:'We tested Apollo Group\'s IPTV plan for a month. Here is our honest review of channels, uptime and UK performance.',     date:'Apr 4, 2025',  rd:'7 min', sc:'9.1', img:'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=600&q=75'},
+  {id:'smtv',  cat:'guides',   tag:'t-gd', lbl:'Guide',         title:'Best IPTV for Smart TV: complete UK setup guide',           exc:'Works on Samsung, LG and Hisense. We cover the best IPTV apps and subscription settings for Smart TV.',                   date:'Apr 2, 2025',  rd:'5 min', img:'https://images.unsplash.com/photo-1593359677879-a4bb92f4834c?w=600&q=75'},
+  {id:'cmp',   cat:'compare',  tag:'t-cm', lbl:'Comparison',    title:'XtremeHD vs Apollo: which IPTV subscription wins?',         exc:'Side-by-side IPTV review: channels, buffering, UK IPTV performance, price and overall value compared.',                   date:'Mar 31, 2025', rd:'6 min', img:'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=75'},
+  {id:'flcn',  cat:'reviews',  tag:'t-rv', lbl:'IPTV Review',   title:'Falcon IPTV review: best budget IPTV plan?',                exc:'Lower IPTV subscription price, solid channel count. We test whether Falcon delivers for UK users on a budget.',            date:'Mar 30, 2025', rd:'6 min', sc:'8.8', img:'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600&q=75'},
+  {id:'news1', cat:'news',     tag:'t-nw', lbl:'News',           title:'IPTV subscription market to exceed $150B in 2025',         exc:'New data shows IPTV overtaking cable in the UK and key European markets. What this means for subscribers.',                date:'Mar 28, 2025', rd:'3 min', img:'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=75'},
+  {id:'dns',   cat:'tips',     tag:'t-tp', lbl:'Tips',           title:'Best DNS for IPTV UK streaming in 2025',                   exc:'The right DNS setting can fix UK IPTV buffering instantly. We tested 8 DNS servers on popular IPTV plans.',                 date:'Mar 25, 2025', rd:'4 min', img:'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=75'},
+];
+
+var curCat='all';
+
+function getFiltered(c){
+  return c==='all'
+    ?ARTS.filter(function(a){return!a.featured})
+    :ARTS.filter(function(a){return a.cat===c&&!a.featured});
+}
+
+function cardImg(a){
+  if(a.img){
+    return'<div class="art-card-img"><img src="'+a.img+'" alt="'+a.title+'" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=art-card-img-ph><div class=ph-grid></div><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=currentColor stroke-width=1.5><rect x=2 y=3 width=20 height=14 rx=2/><path d=&quot;M8 3v14&quot;/></svg></div>\'"/></div>';
+  }
+  return'<div class="art-card-img"><div class="art-card-img-ph"><div class="ph-grid"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 3v14"/></svg></div></div>';
+}
+
+function renderGrid(c){
+  var g=document.getElementById('artGrid');
+  var list=getFiltered(c);
+  if(!list.length){g.innerHTML='<div class="no-res">No articles in this category yet. Check back soon!</div>';return;}
+  g.innerHTML=list.map(function(a){
+    var sc=a.sc?'<span class="score">&#9733; '+a.sc+' / 10</span><span class="dot"></span>':'';
+    return'<a href="article.html" class="art-card">'+cardImg(a)+'<div class="art-body"><span class="tag '+a.tag+'">'+a.lbl+'</span><h3>'+a.title+'</h3><p>'+a.exc+'</p><div class="post-meta">'+sc+'<span>'+a.date+'</span><span class="dot"></span><span>'+a.rd+' read</span></div></div></a>';
+  }).join('');
+}
+
+function fCat(el){
+  var ts=document.querySelectorAll('.ct');
+  for(var i=0;i<ts.length;i++)ts[i].classList.remove('active');
+  el.classList.add('active');
+  curCat=el.getAttribute('data-cat');
+  renderGrid(curCat);
+  var fc=document.getElementById('featCard');
+  fc.style.display=(curCat==='all'||curCat==='reviews')?'':'none';
+}
+
+function fAndScroll(c){
+  document.getElementById('articles').scrollIntoView({behavior:'smooth'});
+  setTimeout(function(){
+    var t=document.querySelector('.ct[data-cat="'+c+'"]');
+    if(t)fCat(t);
+  },400);
+}
+
+renderGrid('all');
+
+/* SEARCH */
+function sOpen(){document.getElementById('sOv').classList.add('open');setTimeout(function(){document.getElementById('sIn').focus();},50);sRender('');}
+function sClose(){document.getElementById('sOv').classList.remove('open');document.getElementById('sIn').value='';}
+function sOvClose(e){if(e.target.id==='sOv')sClose();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')sClose();});
+function sRun(v){sRender(v.trim().toLowerCase());}
+function sRender(q){
+  var c=document.getElementById('sList');
+  var f=q?ARTS.filter(function(a){return a.title.toLowerCase().indexOf(q)!==-1||a.lbl.toLowerCase().indexOf(q)!==-1;}):ARTS;
+  if(!f.length){c.innerHTML='<div class="s-empty">No results for "'+q+'"</div>';return;}
+  c.innerHTML=f.map(function(a){
+    var th=a.img?'<img class="s-item-img" src="'+a.img+'" alt="" loading="lazy"/>':'<div class="s-item-img"></div>';
+    return'<a href="article.html" class="s-item" onclick="sClose()">'+th+'<div class="s-item-info"><h4>'+a.title+'</h4><p>'+a.date+' &middot; '+a.rd+' read</p></div></a>';
+  }).join('');
+}
+
+/* MOBILE */
+var mobO=false;
+function toggleMob(){mobO=!mobO;document.getElementById('mobMenu').classList.toggle('open',mobO);}
+function closeMob(){mobO=false;document.getElementById('mobMenu').classList.remove('open');}
+
+/* REVEAL */
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:0.08});
+var rs=document.querySelectorAll('.rv');
+for(var i=0;i<rs.length;i++)ro.observe(rs[i]);
+</script>
+</body>
+</html>

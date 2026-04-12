@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Privacy Policy | BestIPTVTuto</title>
+<meta name="description" content="Privacy Policy for BestIPTVTuto — how we collect, use and protect your data."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--white:#fff;--off:#f8f7f5;--light:#f1efe9;--border:#e4e1d9;--soft:#edeae4;--text:#181714;--muted:#6a6760;--faint:#aaa79f;--f:'Poppins',system-ui,sans-serif;--rl:16px}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);color:var(--text);background:var(--white);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:300;height:60px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--soft)}
+.logo{font-size:16px;font-weight:700;letter-spacing:-.4px}
+.logo span{font-weight:300;color:var(--muted)}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:6px 12px;transition:all .15s}
+.nav-back:hover{color:var(--text);background:var(--light)}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}
+.hamburger span{width:20px;height:1.5px;background:var(--text);border-radius:2px;display:block}
+.mob-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;padding:1.5rem;border-top:1px solid var(--soft)}
+.mob-menu.open{display:flex}
+.mob-menu a{font-size:17px;font-weight:500;padding:.9rem 0;border-bottom:1px solid var(--soft);color:var(--text)}
+
+/* PAGE HERO */
+.page-hero{background:var(--off);border-bottom:1px solid var(--soft);padding:3.5rem 1.25rem 2.5rem;text-align:center}
+.page-hero .badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--light);border:1px solid var(--border);border-radius:100px;padding:4px 14px;color:var(--muted);margin-bottom:1rem}
+.page-hero h1{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:.75rem}
+.page-hero p{font-size:14px;color:var(--muted);font-weight:300}
+
+/* LAYOUT */
+.legal-wrap{max-width:800px;margin:0 auto;padding:3.5rem 1.25rem 5rem;display:grid;grid-template-columns:1fr 200px;gap:3rem;align-items:start}
+.legal-content{}
+.legal-sidebar{position:sticky;top:80px}
+
+/* CONTENT */
+.legal-content h2{font-size:18px;font-weight:700;letter-spacing:-.3px;margin:2.5rem 0 .75rem;padding-top:.25rem;border-top:1px solid var(--soft)}
+.legal-content h2:first-child{margin-top:0;border-top:none}
+.legal-content h3{font-size:15px;font-weight:600;margin:1.5rem 0 .5rem}
+.legal-content p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:.9rem}
+.legal-content p strong{font-weight:600;color:var(--text)}
+.legal-content ul{padding-left:1.25rem;margin-bottom:.9rem}
+.legal-content li{font-size:14px;color:var(--muted);font-weight:300;line-height:1.75;margin-bottom:.35rem}
+.legal-content a{color:var(--text);text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{opacity:.7}
+
+/* INFO BOX */
+.info-box{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:2rem}
+.info-box p{font-size:13px;color:var(--muted);margin:0}
+.info-box strong{color:var(--text);font-weight:600}
+
+/* SIDEBAR TOC */
+.sb-toc{border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.sb-toc-hdr{padding:.75rem 1rem;border-bottom:1px solid var(--soft);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.sb-toc ul{list-style:none;padding:0}
+.sb-toc li{border-bottom:1px solid var(--soft)}
+.sb-toc li:last-child{border-bottom:none}
+.sb-toc a{display:block;padding:.6rem 1rem;font-size:12px;color:var(--muted);transition:all .15s;line-height:1.4}
+.sb-toc a:hover{color:var(--text);background:var(--off);text-decoration:none;padding-left:1.25rem}
+
+/* FOOTER */
+footer{background:var(--off);border-top:1px solid var(--soft);padding:2.5rem 1.25rem 1.5rem}
+.ft-inner{max-width:1120px;margin:0 auto}
+.ft-bottom{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.ft-bottom p{font-size:11px;color:var(--faint)}
+.ft-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.ft-links a{font-size:11px;color:var(--faint);transition:color .15s}
+.ft-links a:hover{color:var(--text)}
+
+@media(max-width:700px){
+  nav{padding:0 1rem}
+  .hamburger{display:flex}
+  .legal-wrap{grid-template-columns:1fr}
+  .legal-sidebar{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html" onclick="closeMob()">&#8592; Home</a>
+  <a href="tos.html" onclick="closeMob()">Terms of Service</a>
+  <a href="dmca.html" onclick="closeMob()">DMCA</a>
+</div>
+
+<nav>
+  <a href="index.html" class="logo">Best<span>IPTV</span>Tuto</a>
+  <a href="index.html" class="nav-back">&#8592; Back to blog</a>
+  <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="badge">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: April 12, 2025 &nbsp;&middot;&nbsp; Effective: April 12, 2025</p>
+</div>
+
+<div class="legal-wrap">
+  <div class="legal-content">
+
+    <div class="info-box">
+      <p><strong>Summary:</strong> BestIPTVTuto is a review blog. We collect limited data to operate the site and may use cookies for analytics and advertising. We never sell your personal data. Read the full policy below.</p>
+    </div>
+
+    <h2 id="who">1. Who We Are</h2>
+    <p>BestIPTVTuto (<strong>"we"</strong>, <strong>"us"</strong>, or <strong>"our"</strong>) is an independent IPTV review blog operating at bestiptvtuto.com. We publish IPTV reviews, setup guides, tips, and comparisons. We are not an IPTV provider and do not sell streaming subscriptions.</p>
+    <p>For privacy-related questions, contact us at: <a href="mailto:privacy@bestiptvtuto.com">privacy@bestiptvtuto.com</a></p>
+
+    <h2 id="data">2. What Data We Collect</h2>
+    <h3>Data you provide voluntarily</h3>
+    <ul>
+      <li><strong>Newsletter subscription:</strong> your email address when you sign up for our mailing list.</li>
+      <li><strong>Contact form:</strong> your name, email address, and message content if you contact us.</li>
+      <li><strong>Comments:</strong> name, email, and comment text if we enable comment functionality.</li>
+    </ul>
+    <h3>Data collected automatically</h3>
+    <ul>
+      <li><strong>Log data:</strong> IP address, browser type, referring URL, pages visited, and timestamps — collected by our hosting provider (Cloudflare).</li>
+      <li><strong>Analytics data:</strong> page views, session duration, and traffic sources via analytics tools (e.g. Google Analytics or Cloudflare Web Analytics).</li>
+      <li><strong>Cookies:</strong> see Section 5 below.</li>
+    </ul>
+
+    <h2 id="use">3. How We Use Your Data</h2>
+    <p>We use the data we collect to:</p>
+    <ul>
+      <li>Deliver and improve the content on BestIPTVTuto</li>
+      <li>Send newsletter emails to subscribers who have opted in</li>
+      <li>Respond to enquiries submitted through our contact form</li>
+      <li>Analyse site performance and understand how visitors use the site</li>
+      <li>Detect and prevent spam, fraud, or security incidents</li>
+      <li>Comply with legal obligations</li>
+    </ul>
+    <p>We do <strong>not</strong> sell, rent, or trade your personal data to third parties.</p>
+
+    <h2 id="sponsored">4. Sponsored Content &amp; Affiliate Links</h2>
+    <p>Some articles on BestIPTVTuto may contain <strong>sponsored content</strong> or <strong>affiliate links</strong>. This means we may earn a commission if you click a link and make a purchase, at no extra cost to you. All sponsored posts and affiliate relationships are <strong>clearly disclosed</strong> at the top of the relevant article.</p>
+    <p>Sponsorship and affiliate arrangements do <strong>not</strong> influence our review scores or editorial conclusions. Our opinions are our own.</p>
+
+    <h2 id="cookies">5. Cookies</h2>
+    <p>We use cookies and similar tracking technologies on BestIPTVTuto. These may include:</p>
+    <ul>
+      <li><strong>Essential cookies:</strong> required for the site to function (e.g. security, session handling).</li>
+      <li><strong>Analytics cookies:</strong> help us understand visitor behaviour (e.g. Google Analytics).</li>
+      <li><strong>Advertising cookies:</strong> used to serve relevant advertisements or track ad performance if we display ads.</li>
+    </ul>
+    <p>You can control cookies through your browser settings. Disabling cookies may affect some site functionality.</p>
+
+    <h2 id="third">6. Third-Party Services</h2>
+    <p>We use the following third-party services which may collect data according to their own privacy policies:</p>
+    <ul>
+      <li><strong>Cloudflare</strong> — hosting, CDN, and security (cloudflare.com/privacypolicy)</li>
+      <li><strong>Google Analytics</strong> — website analytics (policies.google.com/privacy)</li>
+      <li><strong>Google Fonts</strong> — typography (policies.google.com/privacy)</li>
+      <li><strong>Newsletter provider</strong> — email delivery (e.g. Mailchimp or equivalent)</li>
+    </ul>
+
+    <h2 id="retention">7. Data Retention</h2>
+    <p>We retain personal data only as long as necessary for the purpose it was collected:</p>
+    <ul>
+      <li>Newsletter email addresses: until you unsubscribe.</li>
+      <li>Contact form submissions: up to 12 months.</li>
+      <li>Server log data: typically 30–90 days as set by Cloudflare.</li>
+    </ul>
+
+    <h2 id="rights">8. Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access:</strong> request a copy of the data we hold about you.</li>
+      <li><strong>Correction:</strong> ask us to correct inaccurate data.</li>
+      <li><strong>Deletion:</strong> request that we delete your data ("right to be forgotten").</li>
+      <li><strong>Objection:</strong> object to processing of your data for marketing purposes.</li>
+      <li><strong>Portability:</strong> receive your data in a structured, machine-readable format.</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:privacy@bestiptvtuto.com">privacy@bestiptvtuto.com</a>. We will respond within 30 days.</p>
+
+    <h2 id="children">9. Children's Privacy</h2>
+    <p>BestIPTVTuto is not directed at children under the age of 13. We do not knowingly collect personal data from children. If you believe a child has submitted personal data to us, please contact us and we will delete it promptly.</p>
+
+    <h2 id="changes">10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date at the top of this page. Continued use of the site after any changes constitutes acceptance of the updated policy.</p>
+
+    <h2 id="contact">11. Contact Us</h2>
+    <p>For any privacy-related questions or requests, please email: <a href="mailto:privacy@bestiptvtuto.com">privacy@bestiptvtuto.com</a></p>
+
+  </div>
+
+  <aside class="legal-sidebar">
+    <div class="sb-toc">
+      <div class="sb-toc-hdr">On this page</div>
+      <ul>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#data">Data we collect</a></li>
+        <li><a href="#use">How we use it</a></li>
+        <li><a href="#sponsored">Sponsored content</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#third">Third-party services</a></li>
+        <li><a href="#retention">Data retention</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#changes">Policy changes</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-bottom">
+      <p>&copy; 2025 BestIPTVTuto. All rights reserved.</p>
+      <div class="ft-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="tos.html">Terms of Service</a>
+        <a href="dmca.html">DMCA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var mO=false;
+function toggleMob(){mO=!mO;document.getElementById('mobMenu').classList.toggle('open',mO);}
+function closeMob(){mO=false;document.getElementById('mobMenu').classList.remove('open');}
+</script>
+</body>
+</html>
