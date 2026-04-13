@@ -1,0 +1,86 @@
+# BestIPTVTuto — Cloudflare Pages _headers
+# Applied to every response unless overridden below.
+
+/*
+  # Security headers
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+  # Content Security Policy
+  # Allows: self, Google Fonts, Unsplash images, inline styles/scripts (needed for schema JSON-LD)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self'; frame-ancestors 'none';
+
+  # Performance
+  X-DNS-Prefetch-Control: on
+
+# ── HTML pages — short cache, always revalidate ───────────────
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+  Vary: Accept-Encoding
+
+# ── Homepage ──────────────────────────────────────────────────
+/
+  Cache-Control: public, max-age=3600, must-revalidate
+  Vary: Accept-Encoding
+
+# ── Sitemap — cache 1 day ─────────────────────────────────────
+/sitemap.xml
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: application/xml; charset=utf-8
+  X-Robots-Tag: noindex
+
+# ── Robots.txt — cache 1 day ─────────────────────────────────
+/robots.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: noindex
+
+# ── Fonts — immutable, cache 1 year ─────────────────────────
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept-Encoding
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Images — cache 30 days ───────────────────────────────────
+/*.jpg
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/*.jpeg
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/*.png
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/*.webp
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/*.svg
+  Cache-Control: public, max-age=2592000, must-revalidate
+  Content-Type: image/svg+xml
+
+# ── JS and CSS — immutable if fingerprinted ─────────────────
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept-Encoding
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept-Encoding
+
+# ── Legal pages — tell Google not to index ───────────────────
+/privacy.html
+  X-Robots-Tag: noindex, follow
+
+/tos.html
+  X-Robots-Tag: noindex, follow
+
+/dmca.html
+  X-Robots-Tag: noindex, follow
+
+/404.html
+  X-Robots-Tag: noindex, follow

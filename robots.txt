@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block legal pages from indexing (no SEO value)
+Disallow: /privacy.html
+Disallow: /tos.html
+Disallow: /dmca.html
+
+# Block 404 page
+Disallow: /404.html
+
+Sitemap: https://bestiptvtuto.com/sitemap.xml

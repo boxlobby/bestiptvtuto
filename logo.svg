@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="60" viewBox="0 0 400 60">
+  <defs>
+    <style>
+      .logo-bold { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 28px; fill: #181714; }
+      .logo-light { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-weight: 300; font-size: 28px; fill: #6a6760; }
+    </style>
+  </defs>
+  <rect width="400" height="60" fill="#ffffff"/>
+  <text x="10" y="42">
+    <tspan class="logo-bold">Best</tspan><tspan class="logo-light">IPTV</tspan><tspan class="logo-bold">Tuto</tspan>
+  </text>
+</svg>
