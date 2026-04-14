@@ -489,7 +489,7 @@ footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25r
   </div>
 
   <!-- Featured -->
-  <a href="article.html" id="featCard" class="feat-card rv" style="transition-delay:.08s">
+  <a href="/britishsub-iptv-review-2026.html" class="feat-card rv" id="featCard" style="transition-delay:.08s">
     <div class="feat-img">
       <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80" alt="Best IPTV subscription review 2025" loading="lazy" onerror="this.parentNode.innerHTML=phHTML()"/>
     </div>
@@ -650,12 +650,7 @@ footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25r
 <script>
 function phHTML(){return'<div class="feat-img-placeholder"><div class="feat-img-grid"></div><div class="feat-img-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="26" height="18" rx="2"/><path d="M12 5v18M3 16h26"/></svg></div></div>'}
 
-var ARTS=[
-  {id:'britishsub-i', cat:'reviews', tag:'t-rv', lbl:'IPTV Review', title:'BritishSub IPTV Review 2026 — Best UK IPTV Subscription?', exc:'We tested BritishSub IPTV for 3 weeks on Fire Stick and Smart TV. 30,000+ channels, genuine 4K, and WhatsApp setup in minutes. Is this the best IPTV subscription for UK users in 2026?', date:'12 Apr 2026', rd:'12 min', sc:'8.6', featured:true, href:'/britishsub-iptv-review-2026.html', img:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=85'},
-];
-// Set featured card href
-(function(){var fc=document.getElementById('featCard');if(fc&&ARTS[0]&&ARTS[0].href)fc.href=ARTS[0].href;})();
-
+var ARTS=[];
 var curCat='all';
 
 function getFiltered(c){
@@ -671,6 +666,28 @@ function cardImg(a){
   return'<div class="art-card-img"><div class="art-card-img-ph"><div class="ph-grid"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 3v14"/></svg></div></div>';
 }
 
+function renderFeatured(){
+  var f=ARTS.filter(function(a){return a.featured;})[0]||ARTS[0];
+  if(!f)return;
+  var fc=document.getElementById('featCard');
+  if(fc){
+    fc.href=f.href||'/article.html';
+    var img=fc.querySelector('.feat-img img');
+    var h2=fc.querySelector('h2');
+    var p=fc.querySelector('.feat-body > p');
+    var score=fc.querySelector('.score');
+    var metas=fc.querySelectorAll('.post-meta span');
+    if(img){img.src=f.img||img.src;img.alt=f.title;}
+    if(h2)h2.textContent=f.title;
+    if(p)p.textContent=f.exc;
+    if(score)score.innerHTML='&#9733; '+f.sc+' / 10';
+    if(metas[1])metas[1].textContent=f.date;
+    if(metas[3])metas[3].textContent=f.rd+' read';
+    var tag=fc.querySelector('.tag');
+    if(tag){tag.textContent=f.lbl;tag.className='tag '+f.tag;}
+  }
+}
+
 function renderGrid(c){
   var g=document.getElementById('artGrid');
   var list=getFiltered(c);
@@ -679,6 +696,18 @@ function renderGrid(c){
     var sc=a.sc?'<span class="score">&#9733; '+a.sc+' / 10</span><span class="dot"></span>':'';
     return'<a href="'+(a.href||'article.html')+'" class="art-card">'+cardImg(a)+'<div class="art-body"><span class="tag '+a.tag+'">'+a.lbl+'</span><h3>'+a.title+'</h3><p>'+a.exc+'</p><div class="post-meta">'+sc+'<span>'+a.date+'</span><span class="dot"></span><span>'+a.rd+' read</span></div></div></a>';
   }).join('');
+}
+
+function updateCounts(){
+  var cats={reviews:0,guides:0,tips:0,compare:0,news:0};
+  ARTS.forEach(function(a){if(cats[a.cat]!==undefined)cats[a.cat]++;});
+  var total=ARTS.length;
+  var map={all:total,reviews:cats.reviews,guides:cats.guides,tips:cats.tips,compare:cats.compare,news:cats.news};
+  document.querySelectorAll('.ct').forEach(function(el){
+    var c=el.getAttribute('data-cat');
+    var n=el.querySelector('.ct-n');
+    if(n&&map[c]!==undefined)n.textContent=map[c];
+  });
 }
 
 function fCat(el){
@@ -699,41 +728,39 @@ function fAndScroll(c){
   },400);
 }
 
-renderGrid('all');
-
 /* SEARCH */
 function sOpen(){document.getElementById('sOv').classList.add('open');setTimeout(function(){document.getElementById('sIn').focus();},50);sRender('');}
 function sClose(){document.getElementById('sOv').classList.remove('open');document.getElementById('sIn').value='';}
 function sOvClose(e){if(e.target.id==='sOv')sClose();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')sClose();});
-function sRun(v){sRender(v.trim().toLowerCase());}
+
 function sRender(q){
-  var c=document.getElementById('sList');
-  var f=q?ARTS.filter(function(a){return a.title.toLowerCase().indexOf(q)!==-1||a.lbl.toLowerCase().indexOf(q)!==-1;}):ARTS;
-  if(!f.length){c.innerHTML='<div class="s-empty">No results for "'+q+'"</div>';return;}
-  c.innerHTML=f.map(function(a){
-    var th=a.img?'<img class="s-item-img" src="'+a.img+'" alt="" loading="lazy"/>':'<div class="s-item-img"></div>';
+  var res=document.getElementById('sRes');
+  var list=q.length<2?ARTS:ARTS.filter(function(a){return(a.title+a.exc).toLowerCase().indexOf(q.toLowerCase())>-1;});
+  if(!list.length){res.innerHTML='<p style="padding:1.5rem;color:var(--muted);font-size:14px;">No results found.</p>';return;}
+  res.innerHTML=list.slice(0,8).map(function(a){
+    var th=a.img?'<img src="'+a.img+'" alt="'+a.title+'" loading="lazy" style="width:48px;height:48px;object-fit:cover;border-radius:4px;flex-shrink:0;">':'';
     return'<a href="'+(a.href||'article.html')+'" class="s-item" onclick="sClose()">'+th+'<div class="s-item-info"><h4>'+a.title+'</h4><p>'+a.date+' &middot; '+a.rd+' read</p></div></a>';
   }).join('');
 }
 
-/* MOBILE */
-var mobO=false;
-function toggleMob(){mobO=!mobO;document.getElementById('mobMenu').classList.toggle('open',mobO);}
-function closeMob(){mobO=false;document.getElementById('mobMenu').classList.remove('open');}
+document.addEventListener('DOMContentLoaded', function(){
+  var si=document.getElementById('sIn');
+  if(si)si.addEventListener('input',function(){sRender(this.value);});
+});
 
-/* REVEAL */
-var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:0.08});
-var rs=document.querySelectorAll('.rv');
-for(var i=0;i<rs.length;i++)ro.observe(rs[i]);
-</script>
-
-<script>
-(function(){
-  var arts0 = typeof ARTS!=='undefined'?ARTS[0]:(typeof window.ARTS!=='undefined'?window.ARTS[0]:null);
-  var link = document.getElementById('featCardLink');
-  if(link && arts0 && arts0.href) link.href = arts0.href;
-})();
+/* LOAD ARTICLES FROM JSON */
+fetch('/articles.json?v='+Date.now())
+  .then(function(r){return r.json();})
+  .then(function(data){
+    ARTS=data;
+    renderFeatured();
+    renderGrid('all');
+    updateCounts();
+  })
+  .catch(function(){
+    renderGrid('all');
+  });
 </script>
 </body>
 </html>
