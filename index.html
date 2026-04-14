@@ -749,18 +749,24 @@ document.addEventListener('DOMContentLoaded', function(){
   if(si)si.addEventListener('input',function(){sRender(this.value);});
 });
 
-/* LOAD ARTICLES FROM JSON */
-fetch('/articles.json?v='+Date.now())
-  .then(function(r){return r.json();})
-  .then(function(data){
-    ARTS=data;
-    renderFeatured();
-    renderGrid('all');
-    updateCounts();
-  })
-  .catch(function(){
-    renderGrid('all');
-  });
+/* LOAD ARTICLES */
+function initArts(data){
+  ARTS=data;
+  renderFeatured();
+  renderGrid('all');
+  updateCounts();
+}
+
+// Inline fallback data - always works
+var INLINE=[
+  {"id":"britishsub","cat":"reviews","tag":"t-rv","lbl":"IPTV Review","title":"BritishSub IPTV Review 2026 — Best UK IPTV Subscription?","exc":"We tested BritishSub IPTV for 3 weeks on Fire Stick and Smart TV. 30,000+ channels, genuine 4K, and WhatsApp setup in minutes. Is this the best IPTV subscription for UK users in 2026?","date":"12 Apr 2026","rd":"12 min","sc":"8.6","featured":true,"href":"/britishsub-iptv-review-2026.html","img":"https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=85"}
+];
+
+// Try fetch first (picks up new articles), fall back to inline
+fetch('/articles.json')
+  .then(function(r){if(!r.ok)throw new Error();return r.json();})
+  .then(function(data){initArts(data);})
+  .catch(function(){initArts(INLINE);});
 </script>
 </body>
 </html>
