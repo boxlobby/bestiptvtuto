@@ -5,8 +5,5 @@
   "description": "Homepage auto-builder for BestIPTVTuto",
   "scripts": {
     "build": "node build-homepage.js"
-  },
-  "dependencies": {
-    "node-html-parser": "^6.1.13"
   }
 }
