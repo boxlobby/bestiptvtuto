@@ -122,13 +122,13 @@
     }
   ]
 }
+</script>
 
+<script>
 /* REVEAL ANIMATION */
 var ro=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});
 },{threshold:0.08});
-document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
-
 </script>
 
 <!-- Fonts -->
@@ -265,7 +265,7 @@ nav{position:sticky;top:0;z-index:300;height:60px;padding:0 2rem;display:flex;al
 .read-more:hover{border-color:var(--text)}
 
 /* ── ARTICLE GRID ── */
-.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.art-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
 .art-card{background:var(--white);display:flex;flex-direction:column;cursor:pointer;transition:background .15s;text-decoration:none;color:inherit}
 .art-card:hover{background:var(--off)}
 .art-card-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--light);position:relative}
@@ -662,8 +662,8 @@ var curCat='all';
 
 function getFiltered(c){
   return c==='all'
-    ?ARTS.filter(function(a){return!a.featured})
-    :ARTS.filter(function(a){return a.cat===c&&!a.featured});
+    ?ARTS
+    :ARTS.filter(function(a){return a.cat===c;});
 }
 
 function cardImg(a){
@@ -688,8 +688,8 @@ function renderFeatured(){
     if(h2)h2.textContent=f.title;
     if(p)p.textContent=f.exc;
     if(score)score.innerHTML='&#9733; '+f.sc+' / 10';
-    if(metas[1])metas[1].textContent=f.date;
-    if(metas[3])metas[3].textContent=f.rd+' read';
+    if(metas[2])metas[2].textContent=f.date;
+    if(metas[4])metas[4].textContent=f.rd+' read';
     var tag=fc.querySelector('.tag');
     if(tag){tag.textContent=f.lbl;tag.className='tag '+f.tag;}
   }
@@ -752,6 +752,7 @@ function sRender(q){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
   var si=document.getElementById('sIn');
   if(si)si.addEventListener('input',function(){sRender(this.value);});
 });
@@ -762,6 +763,9 @@ function initArts(data){
   renderFeatured();
   renderGrid('all');
   updateCounts();
+  requestAnimationFrame(function(){
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+  });
 }
 
 // Inline fallback data - always works
