@@ -657,7 +657,11 @@ footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25r
 <script>
 function phHTML(){return'<div class="feat-img-placeholder"><div class="feat-img-grid"></div><div class="feat-img-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="26" height="18" rx="2"/><path d="M12 5v18M3 16h26"/></svg></div></div>'}
 
-var ARTS=[];
+var ARTS=[
+  {id:'tvboxuk-iptv', cat:'reviews', tag:'t-rv', lbl:'IPTV Review', title:'TVBOXUK Review 2026 — Best UK IPTV Subscription?', exc:'We tested TVBOXUK for 3 weeks on Fire Stick and Smart TV. 30,000+ channels, 150,000+ VOD, genuine 4K, and credentials via WhatsApp in under 10 minutes. Is this the best IPTV subscription for UK users in 2026?', date:'15 Apr 2026', rd:'19 min', sc:'9.1', featured:true, href:'/tvboxuk-iptv-review-2026.html', img:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=85'},
+  {id:'britishsub-i', cat:'reviews', tag:'t-rv', lbl:'IPTV Review', title:'BritishSub IPTV Review 2026 — Best UK IPTV Subscription?', exc:'We tested BritishSub IPTV for 3 weeks on Fire Stick and Smart TV. 30,000+ channels, genuine 4K, and WhatsApp setup in minutes. Is this the best IPTV subscription for UK users in 2026?', date:'12 Apr 2026', rd:'24 min', sc:'8.6', href:'/britishsub-iptv-review-2026.html', img:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=85'},
+];/* END_ARTS */
+
 var curCat='all';
 
 function getFiltered(c){
@@ -770,7 +774,8 @@ function initArts(data){
 
 // Inline fallback data - always works
 var INLINE=[
-  {"id":"britishsub","cat":"reviews","tag":"t-rv","lbl":"IPTV Review","title":"BritishSub IPTV Review 2026 — Best UK IPTV Subscription?","exc":"We tested BritishSub IPTV for 3 weeks on Fire Stick and Smart TV. 30,000+ channels, genuine 4K, and WhatsApp setup in minutes. Is this the best IPTV subscription for UK users in 2026?","date":"12 Apr 2026","rd":"12 min","sc":"8.6","featured":true,"href":"/britishsub-iptv-review-2026.html","img":"https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=85"}
+  {id:'tvboxuk-iptv', cat:'reviews', tag:'t-rv', lbl:'IPTV Review', title:'TVBOXUK Review 2026 — Best UK IPTV Subscription?', exc:'We tested TVBOXUK for 3 weeks on Fire Stick and Smart TV. 30,000+ channels, 150,000+ VOD, genuine 4K, and credentials via WhatsApp in under 10 minutes. Is this the best IPTV subscription for UK users in 2026?', date:'15 Apr 2026', rd:'19 min', sc:'9.1', featured:true, href:'/tvboxuk-iptv-review-2026.html', img:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=85'},
+  {id:'britishsub-i', cat:'reviews', tag:'t-rv', lbl:'IPTV Review', title:'BritishSub IPTV Review 2026 — Best UK IPTV Subscription?', exc:'We tested BritishSub IPTV for 3 weeks on Fire Stick and Smart TV. 30,000+ channels, genuine 4K, and WhatsApp setup in minutes. Is this the best IPTV subscription for UK users in 2026?', date:'12 Apr 2026', rd:'24 min', sc:'8.6', href:'/britishsub-iptv-review-2026.html', img:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=85'}
 ];
 
 // Try fetch first (picks up new articles), fall back to inline

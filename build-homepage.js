@@ -112,9 +112,10 @@ function rebuildIndex(articles) {
   let index = fs.readFileSync('index.html', 'utf8');
 
   const artsStart = index.indexOf('var ARTS=[');
-  const artsEnd   = index.indexOf('\n];', artsStart) + 3;
+  const artsEnd   = index.indexOf('/* END_ARTS */') + '/* END_ARTS */'.length;
   if (artsStart === -1) { console.error('ERROR: var ARTS=[ not found in index.html'); process.exit(1); }
-  index = index.slice(0, artsStart) + buildArtsArray(articles) + index.slice(artsEnd);
+  if (artsEnd < '/* END_ARTS */'.length) { console.error('ERROR: /* END_ARTS */ marker not found in index.html'); process.exit(1); }
+  index = index.slice(0, artsStart) + buildArtsArray(articles) + '/* END_ARTS */' + index.slice(artsEnd);
 
   // Fix card hrefs
   index = index.replace(
@@ -155,8 +156,21 @@ function rebuildSitemap(articles) {
   console.log(`Rebuilt sitemap.xml with ${articles.length} articles`);
 }
 
+function rebuildArticlesJson(articles) {
+  const data = articles.map((a, i) => ({
+    id: a.id, cat: a.cat, tag: a.tag, lbl: a.lbl,
+    title: a.title, exc: a.description, date: a.dateStr,
+    rd: a.readMin + ' min', featured: i === 0,
+    href: '/' + a.file,
+    img: a.image ? a.image.replace('w=1200','w=600') : undefined
+  }));
+  fs.writeFileSync('articles.json', JSON.stringify(data, null, 2), 'utf8');
+  console.log(`Rebuilt articles.json with ${articles.length} articles`);
+}
+
 console.log('Scanning articles...');
 const articles = scanArticles();
 console.log(`Found ${articles.length} articles`);
 rebuildIndex(articles);
 rebuildSitemap(articles);
+rebuildArticlesJson(articles);
