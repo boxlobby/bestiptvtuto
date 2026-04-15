@@ -1,74 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://bestiptvtuto.com/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bestiptvtuto.com/about.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bestiptvtuto.com/tvboxuk-iptv-review-2026.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&amp;q=85</image:loc>
-      <image:title>BestIPTVTuto — Best IPTV Reviews, UK Plans &amp; Subscriptions</image:title>
-      <image:caption>Independent IPTV reviews and UK subscription guides</image:caption>
+      <image:loc>https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&q=85</image:loc>
+      <image:title>TVBOXUK Review 2026 — Best UK IPTV Subscription?</image:title>
     </image:image>
   </url>
-
-  <!-- Review Articles -->
   <url>
     <loc>https://bestiptvtuto.com/britishsub-iptv-review-2026.html</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&amp;q=85</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&q=85</image:loc>
       <image:title>BritishSub IPTV Review 2026 — Best UK IPTV Subscription?</image:title>
-      <image:caption>BritishSub IPTV tested for 3 weeks on Fire Stick and Smart TV</image:caption>
     </image:image>
   </url>
-
-  <url>
-    <loc>https://bestiptvtuto.com/article.html</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&amp;q=85</image:loc>
-      <image:title>XtremeHD IPTV Review 2026 — Best IPTV Subscription for UK?</image:title>
-      <image:caption>XtremeHD IPTV tested for 30 days across four devices</image:caption>
-    </image:image>
-  </url>
-
-  <!-- About page — strong E-E-A-T signal -->
-  <url>
-    <loc>https://bestiptvtuto.com/about.html</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Legal pages — low priority, noindex but still included for crawlability -->
-  <url>
-    <loc>https://bestiptvtuto.com/privacy.html</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <url>
-    <loc>https://bestiptvtuto.com/tos.html</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <url>
-    <loc>https://bestiptvtuto.com/dmca.html</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
 </urlset>
