@@ -12,6 +12,7 @@ const SKIP = new Set([
 const CAT_MAP = {
   'IPTV Reviews': { cat:'reviews', tag:'t-rv', lbl:'IPTV Review' },
   'Setup Guides': { cat:'guides',  tag:'t-gd', lbl:'Guide'       },
+  'IPTV Guides':  { cat:'guides',  tag:'t-gd', lbl:'Guide'       },
   'Tips & Tricks':{ cat:'tips',    tag:'t-tp', lbl:'Tips'        },
   'Comparisons':  { cat:'compare', tag:'t-cm', lbl:'Comparison'  },
   'News':         { cat:'news',    tag:'t-nw', lbl:'News'        },
@@ -44,11 +45,15 @@ function scanArticles() {
       const description = getMeta(html, 'property', 'og:description');
       const image       = getMeta(html, 'property', 'og:image');
       const published   = getMeta(html, 'property', 'article:published_time');
-      const section     = getMeta(html, 'property', 'article:section') || 'IPTV Reviews';
+      // Support <!-- category: guides --> comment as override
+      const catComment = (html.match(/<!--\s*category:\s*(\w+)\s*-->/i)||[])[1];
+      const section = catComment
+        ? Object.values(CAT_MAP).find(v=>v.cat===catComment.toLowerCase()) ? catComment.toLowerCase() : 'IPTV Reviews'
+        : getMeta(html, 'property', 'article:section') || 'IPTV Reviews';
 
       if (!title) { console.warn(`Skipping ${file}: no og:title`); continue; }
 
-      const catInfo = CAT_MAP[section] || CAT_MAP['IPTV Reviews'];
+      const catInfo = CAT_MAP[section] || Object.values(CAT_MAP).find(v=>v.cat===section) || CAT_MAP['IPTV Reviews'];
 
       // Extract rating from JSON-LD
       let rating = null;
