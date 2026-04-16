@@ -34,6 +34,12 @@
 <meta name="language" content="en-GB"/>
 <meta name="geo.region" content="GB"/>
 <meta name="revisit-after" content="7 days"/>
+<meta name="author" content="BestIPTVTuto"/>
+<meta name="theme-color" content="#181714"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/logo.svg"/>
+<link rel="apple-touch-icon" href="/logo.svg"/>
 
 <!-- Schema: WebSite + Organization + WebPage -->
 <script type="application/ld+json">
@@ -386,10 +392,10 @@ footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25r
   <div class="s-box">
     <div class="s-row">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
-      <input id="sIn" type="text" placeholder="Search IPTV reviews, plans, UK guides..." oninput="sRun(this.value)" autocomplete="off"/>
+      <input id="sIn" type="text" placeholder="Search IPTV reviews, plans, UK guides..." autocomplete="off"/>
       <span class="s-esc" onclick="sClose()">ESC</span>
     </div>
-    <div class="s-list" id="sList"></div>
+    <div class="s-list" id="sRes"></div>
     <div class="s-foot">Press ESC to close</div>
   </div>
 </div>
@@ -400,10 +406,10 @@ footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25r
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
     Search articles...
   </div>
-  <a href="#articles" onclick="closeMob()">IPTV Reviews</a>
-  <a href="#articles" onclick="closeMob()">Setup Guides</a>
-  <a href="#articles" onclick="closeMob()">Tips &amp; Tricks</a>
-  <a href="#categories" onclick="closeMob()">Categories</a>
+  <a href="#articles" onclick="fAndScroll('reviews');closeMob()">Reviews</a>
+  <a href="#articles" onclick="fAndScroll('guides');closeMob()">Guides</a>
+  <a href="#articles" onclick="fAndScroll('news');closeMob()">News</a>
+  <a href="about.html" onclick="closeMob()">About</a>
   <a href="#newsletter" onclick="closeMob()">Newsletter</a>
 </div>
 
@@ -411,13 +417,11 @@ footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25r
 <nav>
   <a href="index.html" class="logo">Best<span>IPTV</span>Tuto</a>
   <ul class="nav-links">
-    <li><a href="#articles">Reviews</a></li>
-    <li><a href="#articles">Guides</a></li>
-    <li><a href="#articles">Tips</a></li>
-    <li><a href="#categories">Categories</a></li>
-    <li><a href="article.html">Demo Article</a></li>
-    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="#articles" onclick="fAndScroll('reviews')">Reviews</a></li>
+    <li><a href="#articles" onclick="fAndScroll('guides')">Guides</a></li>
+    <li><a href="#articles" onclick="fAndScroll('news')">News</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
   </ul>
   <div class="nav-right">
     <div class="nav-search-btn" onclick="sOpen()">
@@ -648,7 +652,7 @@ footer{background:var(--off);border-top:1px solid var(--soft);padding:3rem 1.25r
       </div>
     </div>
     <div class="ft-bottom">
-      <p>&copy; 2025 BestIPTVTuto. All rights reserved.</p>
+      <p>&copy; 2026 BestIPTVTuto. All rights reserved.</p>
       <p class="ft-disc">Disclaimer: BestIPTVTuto is an independent IPTV review blog. We do not sell IPTV subscriptions. Some posts may contain sponsored content or affiliate links &mdash; these are always clearly disclosed. Our editorial opinions remain our own.</p>
     </div>
   </div>
@@ -748,6 +752,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')sClose();});
 
 function sRender(q){
   var res=document.getElementById('sRes');
+  if(!res)return;
   var list=q.length<2?ARTS:ARTS.filter(function(a){return(a.title+a.exc).toLowerCase().indexOf(q.toLowerCase())>-1;});
   if(!list.length){res.innerHTML='<p style="padding:1.5rem;color:var(--muted);font-size:14px;">No results found.</p>';return;}
   res.innerHTML=list.slice(0,8).map(function(a){
@@ -759,7 +764,10 @@ function sRender(q){
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
   var si=document.getElementById('sIn');
-  if(si)si.addEventListener('input',function(){sRender(this.value);});
+  if(si){
+    si.addEventListener('input',function(){sRender(this.value);});
+    si.addEventListener('keydown',function(e){if(e.key==='Escape')sClose();});
+  }
 });
 
 /* LOAD ARTICLES */
