@@ -24,11 +24,10 @@
 /xtremehd                            /article.html                   301
 
 # ── Legal page aliases ────────────────────────────────────────
-/privacy                             /privacy.html                   301
-/privacy-policy                      /privacy.html                   301
-/terms                               /tos.html                       301
-/terms-of-service                    /tos.html                       301
-/dmca-policy                         /dmca.html                      301
+/privacy-policy                      /privacy                        301
+/terms                               /tos                             301
+/terms-of-service                    /tos                             301
+/dmca-policy                         /dmca                            301
 
 # ── 404 fallback ─────────────────────────────────────────────
 /*                                   /404.html                       404
